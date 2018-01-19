@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title></title>
+		<title>AmbiLamp</title>
+		<link rel="stylesheet" type="text/css" href="index.css">
+		<script src="C:/Users/Jonathan/node_modules/jscolor/dist/color.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
 	</head>
 	<body>
 
+	<!-- JSCOLOR PICKER -->
+	<input type="button" class="jscolor" id="picker" value="EFFFC9">
+	<form>
+		<input type="text" id="color">
+		<input type="submit" value="Set as Default" id="set_default">		
+	</form>
+	<canvas id="temp-chart" class="chart" height="350" width="550">
+	<canvas id="sound-chart" class="chart" height="350" width="550">
+	<script type="text/javascript" src="index.js"></script>
 	</body>
 </html>

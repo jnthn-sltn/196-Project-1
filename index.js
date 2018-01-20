@@ -1,7 +1,3 @@
-function setTextBoxValue(){
-    document.getElementById("color").value = 
-}
-
 var tempCtx = document.getElementById("temp-chart").getContext('2d');
 var tempChart = new Chart(tempCtx, {
     type: 'bar',

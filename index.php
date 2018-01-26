@@ -14,7 +14,7 @@
 			include "header.php";
 
 			$color = "EFFFC9";
-			if (isset($_POST["set_color"])){
+			if (isset($_POST['set_color'])){
 				$color = $_POST['color'];
 			}
 		?>

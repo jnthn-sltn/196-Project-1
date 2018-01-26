@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="header.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
 <!--HEADER -->
 <header>
 	<ul>

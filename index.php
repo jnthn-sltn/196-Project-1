@@ -6,9 +6,7 @@
 	<head>
 		<title>AmbiLamp</title>
 		<link rel="stylesheet" type="text/css" href="index.css">
-		<link rel="stylesheet" type="text/css" href="header.css">
-		<script src="jscolor.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
+		<script src="jscolor.js"></script>		
 	</head>
 	<body>
 		<?php

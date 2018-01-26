@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -8,15 +11,9 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
 	</head>
 	<body>
-
-		<!-- HEADER -->
-		<header>
-			<ul>
-				<li><img src="http://www.oreintl.com/wp-content/uploads/2017/08/DSC3203.jpg"></li>
-				<li><a href="index.html">AmbiLamp</a></li>
-				<li><a href="details.html">Details</a></li>
-			</ul>
-		</header>
+		<?php
+			include "header.php";
+		?>
 		<!-- JSCOLOR PICKER -->
 		<input type="button" class="jscolor" id="picker" value="EFFFC9">
 		<form>

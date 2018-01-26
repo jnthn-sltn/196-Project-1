@@ -231,6 +231,6 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="details.js"></script>
+    <script type="text/javascript" src="assets/js/details.js"></script>
 </body>
 </html>

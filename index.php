@@ -6,7 +6,6 @@
 	<head>
 		<title>AmbiLamp - Home</title>
 		<link rel="stylesheet" type="text/css" href="assets/css/index.css">
-		<script type="text/javascript" src="assets/js/index.js"></script>
 		<script src="assets/js/jscolor.js"></script>		
 	</head>
 	<body>
@@ -45,6 +44,7 @@
 			</p>
 			<p>Fusce suscipit venenatis nunc, a egestas nunc cursus at. Vivamus aliquet tempor mauris, sed consectetur leo blandit sed. Praesent nec massa in purus bibendum faucibus. Suspendisse leo ante, consequat ac odio et, aliquam lobortis justo. Vestibulum cursus purus urna, ut imperdiet urna molestie vitae. Quisque imperdiet eget tellus nec posuere. Donec consectetur fringilla nisi quis tincidunt. Pellentesque bibendum, diam volutpat interdum consequat, tellus massa ullamcorper augue, at gravida est velit a neque. Praesent posuere ipsum id nisl varius, eu sagittis orci fermentum. Nulla porta quam diam, et hendrerit enim dictum sit amet. Nullam ornare, turpis vitae feugiat tristique, nibh massa efficitur nulla, vitae tincidunt ligula diam vel quam. Etiam feugiat pulvinar nulla, nec fermentum lacus porta et. Fusce porta sit amet odio sed pretium. Duis accumsan convallis orci ac tempus. Nunc lobortis rhoncus velit, eget fringilla nulla viverra nec. Ut et arcu metus.
 			</p>
-		</div>		
+		</div>
+		<script type="text/javascript" src="assets/js/index.js"></script>
 	</body>
 </html>

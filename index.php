@@ -5,8 +5,8 @@
 <html>
 	<head>
 		<title>AmbiLamp</title>
-		<link rel="stylesheet" type="text/css" href="index.css">
-		<script src="jscolor.js"></script>		
+		<link rel="stylesheet" type="text/css" href="assets/css/index.css">
+		<script src="assets/js/jscolor.js"></script>		
 	</head>
 	<body>
 		<?php

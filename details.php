@@ -2,8 +2,7 @@
 <html>
 <head>
     <title>AmbiLamp</title>
-    <link rel="stylesheet" type="text/css" href="header.css">
-    <link rel="stylesheet" type="text/css" href="details.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/details.css">
 </head>
 <body>
     <?php

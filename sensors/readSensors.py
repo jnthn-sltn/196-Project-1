@@ -28,6 +28,7 @@ db = connection.ambilampdb
 sounds = db.sound
 humidities = db.hum
 temperatures = db.temp
+num_entries = sounds.count()
 
 # Note that sometimes you won't get a reading and
 # the results will be null (because Linux can't
@@ -51,12 +52,13 @@ while 1:
 
     
     if humidity is not None and temperature is not None:
-        sound_entry = {'time':dts, 'gate':gateVal, 'envelope':envelopeVal,'audio':audioVal}
+        sound_entry = {'entry':num_entries, 'time':dts, 'gate':gateVal, 'envelope':envelopeVal,'audio':audioVal}
         sounds.insert_one(sound_entry)
-        humidity_entry = {'time':dts, 'val':humidity}
+        humidity_entry = {'entry':num_entries, 'time':dts, 'val':humidity}
         humidities.insert_one(humidity_entry)
-        temperature_entry = {'time':dts, 'val':temperature}
+        temperature_entry = {'entry':num_entries, 'time':dts, 'val':temperature}
         temperatures.insert_one(temperature_entry)
 #        print('Temp={0:0.1f}*  Humidity={1:0.1f}%'.format(temperature, humidity))
+        num_entries += 1
         time.sleep(duration)
 #end

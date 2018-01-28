@@ -3,7 +3,7 @@
 <!--HEADER -->
 <header>
 	<ul>
-		<li><img src="assets/img/lamp2.jpg"></li>
+		<li><img src="assets/img/lamp.jpg"></li>
 		<li><a href="index.php">AmbiLamp</a></li>
 		<li><a href="details.php">Details</a></li>
 	</ul>

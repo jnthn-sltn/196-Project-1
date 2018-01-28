@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python2.7
 import sys
 import time
 import Adafruit_DHT
@@ -38,6 +38,6 @@ while 1:
         humidities.insert_one(humidity_entry)
         temperature_entry = {'time':dts, 'val':temperature}
         temperatures.insert_one(temperature_entry)
-        print('Temp={0:0.1f}*  Humidity={1:0.1f}%'.format(temperature, humidity))
+#        print('Temp={0:0.1f}*  Humidity={1:0.1f}%'.format(temperature, humidity))
         time.sleep(duration)
 #end

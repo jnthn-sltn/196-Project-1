@@ -9,6 +9,14 @@ from pytz import timezone
 duration = 5
 sensorDHT = 22
 pinDHT = 26
+pinGate = 21
+pinEnvelope = 1
+pinAudio = 0
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(pinGate, GPIO.IN)
+
+myMCP = MCP3008ADC()
+mySoundSensor = SoundSensor(pinGate,pinEnvelope,pinAudio)
 
 connection = pymongo.MongoClient("mongodb://admin:admin@ds217898.mlab.com:17898/ambilampdb")
 db = connection.ambilampdb
@@ -32,8 +40,14 @@ while 1:
     dto_pacific = dto.astimezone(timezone('US/Pacific'))
     dts = datetime.strftime(dto_pacific,"%Y-%m-%d %H:%M:%S")
 
+    gateVal=GPIO.input(mySoundSensor.get_gate())
+    envelopeVal = myMCP.read(mySoundSensor.get_envelope())
+    audioVal = myMCP.read(mySoundSensor.get_audio())
 
+    
     if humidity is not None and temperature is not None:
+        sound_entry = {'time':dts, 'gate':gateVal, 'envelope':envelopeVal,'audio':audioVal}
+        sounds.insert_one(sound_entry)
         humidity_entry = {'time':dts, 'val':humidity}
         humidities.insert_one(humidity_entry)
         temperature_entry = {'time':dts, 'val':temperature}

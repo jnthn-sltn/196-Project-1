@@ -1,7 +1,12 @@
 #!/usr/bin/python2.7
 import sys
 import time
+
 import Adafruit_DHT
+from SoundSensor import SoundSensor
+from MCP3008ADC import MCP3008ADC
+import RPi.GPIO as GPIO
+
 import pymongo
 from datetime import datetime
 from pytz import timezone

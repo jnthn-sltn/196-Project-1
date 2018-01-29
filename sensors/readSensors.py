@@ -11,7 +11,7 @@ import pymongo
 from datetime import datetime
 from pytz import timezone
 
-duration = 5
+duration = 3600
 sensorDHT = 22
 pinDHT = 26
 pinGate = 21

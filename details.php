@@ -1,5 +1,5 @@
 <?php
-    include "header.php"
+    include "header.php";
 
     /* Connect to the DB*/
     $db = connectMongo();
@@ -22,7 +22,7 @@
      $temperatureX = trim($temperatureX,",");
      $temperatureX = $temperatureX . "]";
 
-     $temperatureData = trim($temperatureData,",";)
+     $temperatureData = trim($temperatureData,",");
      $temperatureData = $temperatureData . "]";
      /* End temperature parse*/
      echo "<script>";

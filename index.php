@@ -104,14 +104,14 @@
 				   } else {
 					   $soundDataNight = $soundDataNight . (float)$hourSums[$i] . ",";
 				   }
-				   
-				   echo "<script>";
-				   echo "var soundDataDay = " . $soundDataDay . ";";
-				   echo "var soundDataNight = " . $soundDataNight . ";";
-				   echo "var soundMin = " . $soundMin . ";";
-				   echo "var soundMax = " . $soundMax . ";";
-				   echo "</script>";
-			   }
+			   }   
+				echo "<script>";
+				echo "var soundDataDay = " . $soundDataDay . ";";
+				echo "var soundDataNight = " . $soundDataNight . ";";
+				echo "var soundMin = " . $soundMin . ";";
+				echo "var soundMax = " . $soundMax . ";";
+				echo "</script>";
+			   
 			   /*BEGIN temperature DATA PARSING */
 			   $hourSums = array_fill(0,24,0);
 			   $hourCounts = array_fill(0,24,0);
@@ -144,6 +144,7 @@
 				   } else {
 					   $temperatureDataNight = $temperatureDataNight . (float)$hourSums[$i] . ",";
 				   }
+			   }
 				   echo "<script>";
 				   echo "var temperatureDataDay = " . $temperatureDataDay . ";";
 				   echo "var temperatureDataNight = " . $temperatureDataNight . ";";
@@ -154,7 +155,7 @@
 				   echo " " . $temperatureDataNight;
 				   echo " " . $temperatureMin ;
 				   echo " " . $temperatureMax ;
-			   }
+			   
 		?>
 		<!-- JSCOLOR PICKER -->
 		<input type="button" class="jscolor" id="picker" onchange="update(this.jscolor)" onfocusout="apply()" value=<?php echo "'" . $color . "'"; ?>>

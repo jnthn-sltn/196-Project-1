@@ -8,9 +8,9 @@
     $soundCursor = $temperatures->find()->sort(array('entry'=> -1))->limit(24);
     $temperatureCursor = $temperatures->find()->sort(array('entry'=> -1))->limit(24);
     /*Parse temperature data. We need to form a string representation
-     of two arrays, which will become x-y pairs for a line chart.
-     This is because Charts.js will need an array, which we will provide
-     by assigning this string to a JS variable.*/
+    /*of two arrays, which will become x-y pairs for a line chart.
+    /* This is because Charts.js will need an array, which we will provide
+    /* by assigning this string to a JS variable.*/
      $temperatureX = "[";
      $temperatureData = "[";
      foreach ($temperatureCursor as $doc) {

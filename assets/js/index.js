@@ -5,7 +5,7 @@ var tempChart = new Chart(tempCtx, {
         labels: ["1200", "0100","0200","0300","0400","0500","0600","0700","0800","0900","1000","1100"],
         datasets: 
             [{
-                label: 'Average temperature Level by Hour - Morning',
+                label: 'Average Temperature Level by Hour - Morning',
                 data: temperatureDataDay,
                 borderColor: 
                 'rgba(255, 230, 64, 1)',
@@ -13,7 +13,7 @@ var tempChart = new Chart(tempCtx, {
                 'rgba(255, 230, 64, 0.5)',
             },
             {
-                label: 'Average temperature Level by Hour - Afternoon',
+                label: 'Average Temperature Level by Hour - Night',
                 data: temperatureDataNight,
                 borderColor: 
                 'rgba(12, 12, 56, 1)',
@@ -47,7 +47,7 @@ var soundChart = new Chart(soundCtx, {
                 'rgba(255, 230, 64, 0.5)',
             },
             {
-                label: 'Average Sound Level by Hour - Afternoon',
+                label: 'Average Sound Level by Hour - Night',
                 data: soundDataNight,
                 borderColor: 
                 'rgba(12, 12, 56, 1)',

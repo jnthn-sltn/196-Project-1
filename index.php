@@ -110,6 +110,10 @@
 			   $soundDataNight = trim($soundDataNight, ",");
 			   $soundDataNight = $soundDataNight . "]";
 			   
+			   echo $soundDataDay;
+			   echo $soundDataNight;
+			   echo $soundMax;
+			   echo $soundMin;
 			   echo "<script>";
 			   echo "var soundDataDay = " . $soundDataDay . ";";
 			   echo "var soundDataNight = " . $soundDataNight . ";";
@@ -155,6 +159,10 @@
 			   $temperatureDataNight = trim($temperatureDataNight, ",");
 			   $temperatureDataNight = $temperatureDataNight . "]";
 			   
+			   echo $temperatureDataDay;
+			   echo $temperatureDataNight;
+			   echo $temperatureMax;
+			   echo $temperatureMin;
 			   echo "<script>";
 			   echo "var temperatureDataDay = " . $temperatureDataDay . ";";
 			   echo "var temperatureDataNight = " . $temperatureDataNight . ";";

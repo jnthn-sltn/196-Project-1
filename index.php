@@ -75,7 +75,7 @@
 			   $hourCounts = array_fill(0,24,0);
 			   /*Create sums for readings from each hour and for # of readings that hour*/
 			   foreach ($soundCursor as $doc) {
-				   $time = split('[-:]',$doc['time'])[3];//get the hour of the date in 24-hour
+				   $time = split('[- :]',$doc['time'])[3];//get the hour of the date in 24-hour
 				   echo $time . "  ";
 				   $hourCounts[$time] = $hourCounts[$time] + 1;
 				   $hourSums[$time] = $hourSums[$time] + $doc['audio'];
@@ -110,11 +110,6 @@
 			   $soundDataNight = trim($soundDataNight, ",");
 			   $soundDataNight = $soundDataNight . "]";
 			   
-			   //echo $soundDataDay;
-			   //echo $soundDataNight;
-			   //echo $soundMax;
-			   //echo $soundMin;
-			   //echo "<script>";
 			   echo "var soundDataDay = " . $soundDataDay . ";";
 			   echo "var soundDataNight = " . $soundDataNight . ";";
 			   echo "var soundMin = " . $soundMin . ";";
@@ -126,7 +121,7 @@
 			   $hourCounts = array_fill(0,24,0);
 			   /*Create sums for readings from each hour and for # of readings that hour*/
 			   foreach ($temperatureCursor as $doc) {
-				   $time = split('[-:]',$doc['time'])[3];//get the hour of the date in 24-hour
+				   $time = split('[- :]',$doc['time'])[3];//get the hour of the date in 24-hour
 				   $hourCounts[$time] = $hourCounts[$time] + 1;
 				   $hourSums[$time] = $hourSums[$time] + $doc['val'];
 			   }
@@ -159,16 +154,12 @@
 			   $temperatureDataNight = trim($temperatureDataNight, ",");
 			   $temperatureDataNight = $temperatureDataNight . "]";
 			   
-			   echo $temperatureDataDay;
-			   echo $temperatureDataNight;
-			   echo $temperatureMax;
-			   echo $temperatureMin;
-			   //echo "<script>";
-			   //echo "var temperatureDataDay = " . $temperatureDataDay . ";";
-			   //echo "var temperatureDataNight = " . $temperatureDataNight . ";";
-			   //echo "var temperatureMin = " . $temperatureMin . ";";
-			   //echo "var temperatureMax = " . $temperatureMax . ";";
-			   //echo "</script>";
+			   echo "<script>";
+			   echo "var temperatureDataDay = " . $temperatureDataDay . ";";
+			   echo "var temperatureDataNight = " . $temperatureDataNight . ";";
+			   echo "var temperatureMin = " . $temperatureMin . ";";
+			   echo "var temperatureMax = " . $temperatureMax . ";";
+			   echo "</script>";
 				   			   
 		?>
 		<!-- JSCOLOR PICKER -->

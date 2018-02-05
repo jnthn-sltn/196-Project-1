@@ -79,7 +79,7 @@
 				   $time = split('[-:]',$doc['time'])[3];//get the hour of the date in 24-hour
 				   $hourCounts[$time] = $hourCounts[$time] + 1;
 				   $hourSums[$time] = $hourSums[$time] + $doc['audio'];
-				   echo $doc['audio'];
+				   echo $doc['audio'] . ' ';
 			   }
 			   $soundMin = 1000;
 			   $soundMax = 0;

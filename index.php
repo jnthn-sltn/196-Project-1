@@ -33,14 +33,13 @@
 			foreach($cursurColor as $doc) {
 				$default_color = $doc['color'];
 			}
-
 			$color = $default_color;
 			if (isset($_POST['set_color'])){
 				$color = $_POST['color'];
 			}
 			if (isset($_POST['set_default'])) {
 				$color_data->insert($_POST['color']);
-			   }
+			}
 			   /* BEGIN LED CODE */
 			   /********************************************************
 			   * Use the LED schematic in Challenge 2, LED Circuit
@@ -77,6 +76,7 @@
 			   /*Create sums for readings from each hour and for # of readings that hour*/
 			   foreach ($soundCursor as $doc) {
 				   $time = split('[-:]',$doc['time'])[3];//get the hour of the date in 24-hour
+				   echo $time . "  ";
 				   $hourCounts[$time] = $hourCounts[$time] + 1;
 				   $hourSums[$time] = $hourSums[$time] + $doc['audio'];
 				}
@@ -110,11 +110,11 @@
 			   $soundDataNight = trim($soundDataNight, ",");
 			   $soundDataNight = $soundDataNight . "]";
 			   
-			   echo $soundDataDay;
-			   echo $soundDataNight;
-			   echo $soundMax;
-			   echo $soundMin;
-			   echo "<script>";
+			   //echo $soundDataDay;
+			   //echo $soundDataNight;
+			   //echo $soundMax;
+			   //echo $soundMin;
+			   //echo "<script>";
 			   echo "var soundDataDay = " . $soundDataDay . ";";
 			   echo "var soundDataNight = " . $soundDataNight . ";";
 			   echo "var soundMin = " . $soundMin . ";";
@@ -163,12 +163,12 @@
 			   echo $temperatureDataNight;
 			   echo $temperatureMax;
 			   echo $temperatureMin;
-			   echo "<script>";
-			   echo "var temperatureDataDay = " . $temperatureDataDay . ";";
-			   echo "var temperatureDataNight = " . $temperatureDataNight . ";";
-			   echo "var temperatureMin = " . $temperatureMin . ";";
-			   echo "var temperatureMax = " . $temperatureMax . ";";
-			   echo "</script>";
+			   //echo "<script>";
+			   //echo "var temperatureDataDay = " . $temperatureDataDay . ";";
+			   //echo "var temperatureDataNight = " . $temperatureDataNight . ";";
+			   //echo "var temperatureMin = " . $temperatureMin . ";";
+			   //echo "var temperatureMax = " . $temperatureMax . ";";
+			   //echo "</script>";
 				   			   
 		?>
 		<!-- JSCOLOR PICKER -->

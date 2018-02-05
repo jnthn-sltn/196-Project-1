@@ -1,7 +1,4 @@
-<?php
-    include "header.php";
-
-?>
+<!DOCTYPE html>
 <html>
 <head>
     <title>AmbiLamp</title>

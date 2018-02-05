@@ -11,8 +11,27 @@
         $db = connectMongo();
         $sounds = $db->sound;
         $temperatures = $db->temp;
-        $soundCursor = $temperatures->find()->sort(array('entry'=> -1))->limit(24);
+        $soundCursor = $sounds->find()->sort(array('entry'=> -1))->limit(24);
         $temperatureCursor = $temperatures->find()->sort(array('entry'=> -1))->limit(24);
+        /*Parse Sound data.*/
+        $soundX = "[";
+        $soundData = "[";
+        foreach ($soundCursor as $doc) {
+            $time = split('[ ]', $doc['time']);//split the date into day and time
+            $soundX = $soundX . "'" . $time[1] . "',";//put time into the x axis
+            $soundData = $soundData . $doc['val']. ",";//add y value - sound for that time
+        }
+        //strip the trailing commas and add the closing bracket
+        $soundX = trim($soundX,",");
+        $soundX = $soundX . "]";
+
+        $soundData = trim($soundData,",");
+        $soundData = $soundData . "]";
+        /* End sound parse*/
+        echo "<script>";
+        echo "var soundData = " . $soundData . ";";
+        echo "var soundX = " . $soundX . ";";
+        echo "</script>";
         /*Parse temperature data. We need to form a string representation
         /*of two arrays, which will become x-y pairs for a line chart.
         /* This is because Charts.js will need an array, which we will provide

@@ -127,7 +127,7 @@
 			   $temperatureDataNight = '[';
 			   for($i = 0; $i < 24; $i = $i + 1) {
 				   //average
-				   echo 'Hello World!';
+				   echo 'Hello World!' . $i . ' ';
 				   $hourSums[$i] = $hourSums[$i]/$hourCounts[$i];
 
 				   //update max

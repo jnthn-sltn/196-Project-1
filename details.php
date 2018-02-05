@@ -30,7 +30,6 @@
      echo "var temperatureX = " . $temperatureX . ";";
      echo "</script>";
 ?>
-<!DOCTYPE html>
 <html>
 <head>
     <title>AmbiLamp</title>

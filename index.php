@@ -79,15 +79,14 @@
 				   $time = split('[-:]',$doc['time'])[3];//get the hour of the date in 24-hour
 				   $hourCounts[$time] = $hourCounts[$time] + 1;
 				   $hourSums[$time] = $hourSums[$time] + $doc['audio'];
-				   echo $doc['audio'] . ' ';
-			   }
+				}
 			   $soundMin = 1000;
 			   $soundMax = 0;
 			   $soundDataDay = '[';
 			   $soundDataNight = '[';
 			   for($i = 0; $i < 24; $i = $i + 1) {
 				   //average
-				   $hourSums[$i] = $hourSums[$i]/$hourCounts[$i];
+				   $hourSums[$i] = 9/$hourCounts[$i];
 
 				   //update max
 				   if ((float)$hourSums[$i] > $soundMax) {

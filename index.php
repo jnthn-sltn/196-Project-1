@@ -29,7 +29,7 @@
 				$default_color = $doc['color'];
 			}
 
-			$color = "EFFFC9";
+			$color = $default_color;
 			if (isset($_POST['set_color'])){
 				$color = $_POST['color'];
 			}

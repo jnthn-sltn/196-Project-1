@@ -54,6 +54,10 @@
         echo "var temperatureData = " . $temperatureData . ";";
         echo "var temperatureX = " . $temperatureX . ";";
         echo "</script>";
+        
+        $soundCursor = $sounds->find()->sort(array('entry'=> -1))->limit(24);
+        $temperatureCursor = $temperatures->find()->sort(array('entry'=> -1))->limit(24);
+        
     
     ?>
     <!-- BUTTONS AND CANVASES -->
@@ -74,168 +78,15 @@
                 <tr>
                     <th>Time</th>
                     <th>Temperature</th>
-                    <th>Deviation from Average</th>
                 </tr>
-                <tr>
-                    <td>I</td>
-                    <td>am</td>
-                    <td>a</td>
-                </tr>
-                <tr>
-                    <td>table</td>
-                    <td>for</td>
-                    <td>demonstration</td>
-                </tr>
-                <tr>
-                    <td>I</td>
-                    <td>am</td>
-                    <td>a</td>
-                </tr>
-                <tr>
-                    <td>table</td>
-                    <td>for</td>
-                    <td>demonstration</td>
-                </tr>
-                <tr>
-                    <td>I</td>
-                    <td>am</td>
-                    <td>a</td>
-                </tr>
-                <tr>
-                    <td>table</td>
-                    <td>for</td>
-                    <td>demonstration</td>
-                </tr>
-                <tr>
-                    <td>I</td>
-                    <td>am</td>
-                    <td>a</td>
-                </tr>
-                <tr>
-                    <td>table</td>
-                    <td>for</td>
-                    <td>demonstration</td>
-                </tr>
-                <tr>
-                    <td>I</td>
-                    <td>am</td>
-                    <td>a</td>
-                </tr>
-                <tr>
-                    <td>table</td>
-                    <td>for</td>
-                    <td>demonstration</td>
-                </tr>
-                <tr>
-                    <td>I</td>
-                    <td>am</td>
-                    <td>a</td>
-                </tr>
-                <tr>
-                    <td>table</td>
-                    <td>for</td>
-                    <td>demonstration</td>
-                </tr>
-                <tr>
-                    <td>I</td>
-                    <td>am</td>
-                    <td>a</td>
-                </tr>
-                <tr>
-                    <td>table</td>
-                    <td>for</td>
-                    <td>demonstration</td>
-                </tr>
-                <tr>
-                    <td>I</td>
-                    <td>am</td>
-                    <td>a</td>
-                </tr>
-                <tr>
-                    <td>table</td>
-                    <td>for</td>
-                    <td>demonstration</td>
-                </tr>
-                <tr>
-                    <td>I</td>
-                    <td>am</td>
-                    <td>a</td>
-                </tr>
-                <tr>
-                    <td>table</td>
-                    <td>for</td>
-                    <td>demonstration</td>
-                </tr>
-                <tr>
-                    <td>I</td>
-                    <td>am</td>
-                    <td>a</td>
-                </tr>
-                <tr>
-                    <td>table</td>
-                    <td>for</td>
-                    <td>demonstration</td>
-                </tr>
-                <tr>
-                    <td>I</td>
-                    <td>am</td>
-                    <td>a</td>
-                </tr>
-                <tr>
-                    <td>table</td>
-                    <td>for</td>
-                    <td>demonstration</td>
-                </tr>
-                <tr>
-                    <td>I</td>
-                    <td>am</td>
-                    <td>a</td>
-                </tr>
-                <tr>
-                    <td>table</td>
-                    <td>for</td>
-                    <td>demonstration</td>
-                </tr>
-                <tr>
-                    <td>I</td>
-                    <td>am</td>
-                    <td>a</td>
-                </tr>
-                <tr>
-                    <td>table</td>
-                    <td>for</td>
-                    <td>demonstration</td>
-                </tr>
-                <tr>
-                    <td>I</td>
-                    <td>am</td>
-                    <td>a</td>
-                </tr>
-                <tr>
-                    <td>table</td>
-                    <td>for</td>
-                    <td>demonstration</td>
-                </tr>
-                <tr>
-                    <td>I</td>
-                    <td>am</td>
-                    <td>a</td>
-                </tr>
-                <tr>
-                    <td>table</td>
-                    <td>for</td>
-                    <td>demonstration</td>
-                </tr>
-                <tr>
-                    <td>I</td>
-                    <td>am</td>
-                    <td>a</td>
-                </tr>
-                <tr>
-                    <td>table</td>
-                    <td>for</td>
-                    <td>demonstration</td>
-                </tr>
+                <?php
+                    foreach ($temperatureCursor as $doc) {
+                        echo "<tr>";
+                        echo "<td>".$doc['time']."</td>";
+                        echo "<td>".$doc['val']."</td>";
+                        echo "</tr>"
+                    }
+                ?>
             </table>
         </div>
         <div class="table">
@@ -243,38 +94,15 @@
                     <tr>
                         <th>Time</th>
                         <th>Amplitude</th>
-                        <th>Deviation from Average</th>
                     </tr>
-                    <tr>
-                        <td>I</td>
-                        <td>am</td>
-                        <td>a</td>
-                    </tr>
-                    <tr>
-                        <td>table</td>
-                        <td>for</td>
-                        <td>demonstration</td>
-                    </tr>
-                    <tr>
-                        <td>I</td>
-                        <td>am</td>
-                        <td>a</td>
-                    </tr>
-                    <tr>
-                        <td>table</td>
-                        <td>for</td>
-                        <td>demonstration</td>
-                    </tr>
-                    <tr>
-                        <td>I</td>
-                        <td>am</td>
-                        <td>a</td>
-                    </tr>
-                    <tr>
-                        <td>table</td>
-                        <td>for</td>
-                        <td>demonstration</td>
-                    </tr>
+                    <?php
+                        foreach ($temperatureCursor as $doc) {
+                            echo "<tr>";
+                            echo "<td>".$doc['time']."</td>";
+                            echo "<td>".$doc['audio']."</td>";
+                            echo "</tr>"
+                        }
+                    ?>
                 </table>
         </div>
     </div>

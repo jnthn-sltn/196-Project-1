@@ -86,7 +86,7 @@
 			   $soundDataNight = '[';
 			   for($i = 0; $i < 24; $i = $i + 1) {
 				   //average
-				   $hourSums[$i] = 9/$hourCounts[$i];
+				   $hourSums[$i] = $hourSums[$i]/9; //$hourCounts[$i];
 
 				   //update max
 				   if ((float)$hourSums[$i] > $soundMax) {

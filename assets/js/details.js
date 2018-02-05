@@ -10,7 +10,7 @@ function drawTemp(){
     tempCounter++;
     tempCtx = document.getElementById("temp-chart-long").getContext('2d');
     
-    if (tempCounter = tempCounter % 2){
+    if ((tempCounter = tempCounter % 2) == 0){
         tempChart.destroy();
     }else{
         tempChart = new Chart(tempCtx, {

@@ -127,7 +127,6 @@
 			   $temperatureDataNight = '[';
 			   for($i = 0; $i < 24; $i = $i + 1) {
 				   //average
-				   echo 'Hello World!' . $i . ' ';
 				   $hourSums[$i] = $hourSums[$i]/$hourCounts[$i];
 
 				   //update max
@@ -162,7 +161,7 @@
 		</form>
 		<!-- CHARTS -->
 		<div id="charts-container">
-			<canvas id="temp-chart" class="chart" height="350" width="550"></canvas>
+			<!--<canvas id="temp-chart" class="chart" height="350" width="550"></canvas>-->
 			<canvas id="sound-chart" class="chart" height="350" width="550"></canvas>
 		</div>
 

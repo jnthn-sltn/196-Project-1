@@ -17,7 +17,9 @@
 			$default_color = "EFFFC9";
 			$db = connectMongo();
 			$color_data = $db->color;
-			
+			$sounds = $db->sound;
+			$soundCursor = $sounds->find()->sort(array('entry'=> -1))->limit(24);
+        
 			if (isset($_POST['set_default'])) {
 				$num_entries = $color_data->count();
 				$color_dict = array('color' => $_POST['color'],'entry' => $num_entries + 1);
@@ -70,7 +72,7 @@
 			   $hourSums = array_fill(0,24,0);
 			   $hourCounts = array_fill(0,24,0);
 			   /*Create sums for readings from each hour and for # of readings that hour*/
-			   foreach($soundCursor as $doc) {
+			   foreach ($soundCursor as $doc) {
 				   $time = split('[-:]',$doc['time'])[3];//get the hour of the date in 24-hour
 				   $hourCounts[$time] = $hourCounts[$time] + 1;
 				   $hourSums[$time] = $hourSums[$time] + $doc['audio'];

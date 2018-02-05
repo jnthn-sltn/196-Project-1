@@ -47,7 +47,7 @@ function drawSound(){
     soundCounter++;
     soundCtx = document.getElementById("sound-chart-long").getContext('2d');
     
-    if (soundcounter = soundCounter % 2){
+    if ((soundcounter = soundCounter % 2) == 0){
         soundChart.destroy();
     } else {
         soundChart = new Chart(soundCtx, {

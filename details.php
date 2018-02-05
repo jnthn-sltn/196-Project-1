@@ -7,6 +7,9 @@
 <body>
     <?php
         include "header.php";
+        echo "<textarea name = 'mydata'>\n";
+        echo htmlspecialchars($data)."\n";
+        echo "</textarea>";
         /* Connect to the DB*/
         $db = connectMongo();
         $sounds = $db->sound;
@@ -22,7 +25,7 @@
         foreach ($temperatureCursor as $doc) {
             $time = split('[ ]', $doc['time']);//split the date into day and time
             $temperatureX = $temperatureX . "'" . $time[1] . "',";//put time into the x axis
-            $temperatureData = $temperatureData . $doc['val'] . ",";//add y value - temperature for that time
+            $temperatureData = $temperatureData . $doc['val']. ",";//add y value - temperature for that time
         }
         //strip the trailing commas and add the closing bracket
         $temperatureX = trim($temperatureX,",");

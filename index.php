@@ -150,6 +150,10 @@
 				   echo "var temperatureMin = " . $temperatureMin . ";";
 				   echo "var temperatureMax = " . $temperatureMax . ";";
 				   echo "</script>";
+				   echo " " . $temperatureDataDay;
+				   echo " " . $temperatureDataNight;
+				   echo " " . $temperatureMin ;
+				   echo " " . $temperatureMax ;
 			   }
 		?>
 		<!-- JSCOLOR PICKER -->
@@ -161,7 +165,7 @@
 		</form>
 		<!-- CHARTS -->
 		<div id="charts-container">
-			<!--<canvas id="temp-chart" class="chart" height="350" width="550"></canvas>-->
+			<canvas id="temp-chart" class="chart" height="350" width="550"></canvas>
 			<canvas id="sound-chart" class="chart" height="350" width="550"></canvas>
 		</div>
 

@@ -65,6 +65,40 @@
 			   $green->pwm_write(hexdec($colorArray[2].$colorArray[3]));
 			   $blue->pwm_write(hexdec($colorArray[4].$colorArray[5]));
 			   /* END LED CODE */
+
+			   /*BEGIN SOUND DATA PARSING */
+			   $hourSums = array_fill(0,24,0);
+			   $hourCounts = array_fill(0,24,0);
+			   /*Create sums for readings from each hour and for # of readings that hour*/
+			   foreach($soundCursor as $doc) {
+				   $time = split('[-:]',$doc['time'])[3];//get the hour of the date in 24-hour
+				   $hourCounts[$time] = $hourCounts[$time] + 1;
+				   $hourSums[$time] = $hourSums[$time] + $doc['audio'];
+			   }
+			   $soundMin = 1000;
+			   $soundMax = 0;
+			   $soundDataDay = '[';
+			   $soundDataNight = '[';
+			   for($i = 0; $i < 24; $i = $i + 1) {
+				   //average
+				   $hourSums[$i] = $hourSums[$i]/$hourCounts[$i];
+
+				   //update max
+				   if ((float)$hourSums[$i] > $soundMax) {
+					$soundMax = (float)$hourSums[$i];
+				   }
+
+				   //update min
+				   if ((float)$hourSums[$i] < $soundMin) {
+					$soundMin = (float)$hourSums[$i];
+				   }
+				   //add to dayrray or nightrray
+				   if ($i < 12) {
+					   $soundDataDay = $soundDataDay . (float)$hourSums[$i] . ",";
+				   } else {
+					   $soundDataNight = $soundDataNight . (float)$hourSums[$i] . ",";
+				   }
+			   }
 		?>
 		<!-- JSCOLOR PICKER -->
 		<input type="button" class="jscolor" id="picker" onchange="update(this.jscolor)" onfocusout="apply()" value=<?php echo "'" . $color . "'"; ?>>

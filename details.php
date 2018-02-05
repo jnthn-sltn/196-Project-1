@@ -7,9 +7,6 @@
 <body>
     <?php
         include "header.php";
-        echo "<textarea name = 'mydata'>\n";
-        echo htmlspecialchars($data)."\n";
-        echo "</textarea>";
         /* Connect to the DB*/
         $db = connectMongo();
         $sounds = $db->sound;

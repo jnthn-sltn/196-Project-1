@@ -104,13 +104,18 @@
 				   } else {
 					   $soundDataNight = $soundDataNight . (float)$hourSums[$i] . ",";
 				   }
-			   }   
-				echo "<script>";
-				echo "var soundDataDay = " . $soundDataDay . ";";
-				echo "var soundDataNight = " . $soundDataNight . ";";
-				echo "var soundMin = " . $soundMin . ";";
-				echo "var soundMax = " . $soundMax . ";";
-				echo "</script>";
+			   }
+			   $soundDataDay = trim($soundDataDay, ",");
+			   $soundDataDay = $soundDataDay . "]";
+			   $soundDataNight = trim($soundDataNight, ",");
+			   $soundDataNight = $soundDataNight . "]";
+			   
+			   echo "<script>";
+			   echo "var soundDataDay = " . $soundDataDay . ";";
+			   echo "var soundDataNight = " . $soundDataNight . ";";
+			   echo "var soundMin = " . $soundMin . ";";
+			   echo "var soundMax = " . $soundMax . ";";
+			   echo "</script>";
 			   
 			   /*BEGIN temperature DATA PARSING */
 			   $hourSums = array_fill(0,24,0);
@@ -145,17 +150,18 @@
 					   $temperatureDataNight = $temperatureDataNight . (float)$hourSums[$i] . ",";
 				   }
 			   }
-				   echo "<script>";
-				   echo "var temperatureDataDay = " . $temperatureDataDay . ";";
-				   echo "var temperatureDataNight = " . $temperatureDataNight . ";";
-				   echo "var temperatureMin = " . $temperatureMin . ";";
-				   echo "var temperatureMax = " . $temperatureMax . ";";
-				   echo "</script>";
-				   echo " " . $temperatureDataDay;
-				   echo " " . $temperatureDataNight;
-				   echo " " . $temperatureMin ;
-				   echo " " . $temperatureMax ;
+			   $temperatureDataDay = trim($temperatureDataDay, ",");
+			   $temperatureDataDay = $temperatureDataDay . "]";
+			   $temperatureDataNight = trim($temperatureDataNight, ",");
+			   $temperatureDataNight = $temperatureDataNight . "]";
 			   
+			   echo "<script>";
+			   echo "var temperatureDataDay = " . $temperatureDataDay . ";";
+			   echo "var temperatureDataNight = " . $temperatureDataNight . ";";
+			   echo "var temperatureMin = " . $temperatureMin . ";";
+			   echo "var temperatureMax = " . $temperatureMax . ";";
+			   echo "</script>";
+				   			   
 		?>
 		<!-- JSCOLOR PICKER -->
 		<input type="button" class="jscolor" id="picker" onchange="update(this.jscolor)" onfocusout="apply()" value=<?php echo "'" . $color . "'"; ?>>

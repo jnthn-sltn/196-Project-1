@@ -100,6 +100,12 @@
 				   } else {
 					   $soundDataNight = $soundDataNight . (float)$hourSums[$i] . ",";
 				   }
+				   echo "<script>";
+				   echo "var soundDataDay = " . $soundDataDay . ";";
+				   echo "var soundDataNight = " . $soundDataNight . ";";
+				   echo "var soundMin = " . $soundMin . ";";
+				   echo "var soundMax = " . $soundMax . ";";
+				   echo "</script>";
 			   }
 		?>
 		<!-- JSCOLOR PICKER -->

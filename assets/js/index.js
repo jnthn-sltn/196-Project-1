@@ -57,7 +57,7 @@ var soundChart = new Chart(soundCtx, {
     options: {
         scale: {
             ticks: {
-                min:soundMin,
+                min: soundMin,
                 max: soundMax,
                 }
             },

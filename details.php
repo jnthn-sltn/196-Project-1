@@ -96,7 +96,7 @@
                         <th>Amplitude</th>
                     </tr>
                     <?php
-                        foreach ($temperatureCursor as $doc) {
+                        foreach ($soundCursor as $doc) {
                             echo "<tr>";
                             echo "<td>".$doc['time']."</td>";
                             echo "<td>".$doc['audio']."</td>";

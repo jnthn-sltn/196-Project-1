@@ -77,7 +77,6 @@
 			   /*Create sums for readings from each hour and for # of readings that hour*/
 			   foreach ($soundCursor as $doc) {
 				   $time = split('[-:]',$doc['time'])[3];//get the hour of the date in 24-hour
-				   echo $time;
 				   $hourCounts[$time] = $hourCounts[$time] + 1;
 				   $hourSums[$time] = $hourSums[$time] + $doc['audio'];
 			   }
@@ -104,6 +103,8 @@
 				   } else {
 					   $soundDataNight = $soundDataNight . (float)$hourSums[$i] . ",";
 				   }
+				   echo $soundDataDay;
+				   
 				   echo "<script>";
 				   echo "var soundDataDay = " . $soundDataDay . ";";
 				   echo "var soundDataNight = " . $soundDataNight . ";";

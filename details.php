@@ -84,7 +84,7 @@
                         echo "<tr>";
                         echo "<td>".$doc['time']."</td>";
                         echo "<td>".$doc['val']."</td>";
-                        echo "</tr>"
+                        echo "</tr>";
                     }
                 ?>
             </table>
@@ -100,7 +100,7 @@
                             echo "<tr>";
                             echo "<td>".$doc['time']."</td>";
                             echo "<td>".$doc['audio']."</td>";
-                            echo "</tr>"
+                            echo "</tr>";
                         }
                     ?>
                 </table>

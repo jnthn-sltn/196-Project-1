@@ -109,6 +109,7 @@
 			   $soundDataNight = trim($soundDataNight, ",");
 			   $soundDataNight = $soundDataNight . "]";
 			   
+			   echo "<script>";
 			   echo "var soundDataDay = " . $soundDataDay . ";";
 			   echo "var soundDataNight = " . $soundDataNight . ";";
 			   echo "var soundMin = " . $soundMin . ";";

@@ -75,6 +75,7 @@
 			   $hourSums = array_fill(0,24,0);
 			   $hourCounts = array_fill(0,24,0);
 			   /*Create sums for readings from each hour and for # of readings that hour*/
+			   echo "hello world!";
 			   foreach ($soundCursor as $doc) {
 				   $time = split('[-:]',$doc['time'])[3];//get the hour of the date in 24-hour
 				   $hourCounts[$time] = $hourCounts[$time] + 1;

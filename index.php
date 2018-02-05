@@ -85,8 +85,9 @@
 			   $soundDataDay = '[';
 			   $soundDataNight = '[';
 			   for($i = 0; $i < 24; $i = $i + 1) {
-				   //average
-				   $hourSums[$i] = $hourSums[$i]/9; //$hourCounts[$i];
+				   
+					//average
+				   $hourSums[$i] = $hourSums[$i]/$hourCounts[$i];
 
 				   //update max
 				   if ((float)$hourSums[$i] > $soundMax) {
@@ -126,6 +127,7 @@
 			   $temperatureDataNight = '[';
 			   for($i = 0; $i < 24; $i = $i + 1) {
 				   //average
+				   echo 'Hello World!';
 				   $hourSums[$i] = $hourSums[$i]/$hourCounts[$i];
 
 				   //update max

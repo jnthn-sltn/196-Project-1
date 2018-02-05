@@ -16,10 +16,13 @@
 			/* BEGIN COLOR */
 			$default_color = "EFFFC9";
 			$db = connectMongo();
+
 			$color_data = $db->color;
 			$sounds = $db->sound;
 			$soundCursor = $sounds->find()->sort(array('entry'=> -1))->limit(24);
-        
+			$temperatures = $db->temp;
+			$temperatureCursor = $temperatures->find()->sort(array('entry'=> -1))->limit(24);
+			
 			if (isset($_POST['set_default'])) {
 				$num_entries = $color_data->count();
 				$color_dict = array('color' => $_POST['color'],'entry' => $num_entries + 1);
@@ -105,6 +108,45 @@
 				   echo "var soundDataNight = " . $soundDataNight . ";";
 				   echo "var soundMin = " . $soundMin . ";";
 				   echo "var soundMax = " . $soundMax . ";";
+				   echo "</script>";
+			   }
+			   /*BEGIN temperature DATA PARSING */
+			   $hourSums = array_fill(0,24,0);
+			   $hourCounts = array_fill(0,24,0);
+			   /*Create sums for readings from each hour and for # of readings that hour*/
+			   foreach ($temperatureCursor as $doc) {
+				   $time = split('[-:]',$doc['time'])[3];//get the hour of the date in 24-hour
+				   $hourCounts[$time] = $hourCounts[$time] + 1;
+				   $hourSums[$time] = $hourSums[$time] + $doc['val'];
+			   }
+			   $temperatureMin = 1000;
+			   $temperatureMax = 0;
+			   $temperatureDataDay = '[';
+			   $temperatureDataNight = '[';
+			   for($i = 0; $i < 24; $i = $i + 1) {
+				   //average
+				   $hourSums[$i] = $hourSums[$i]/$hourCounts[$i];
+
+				   //update max
+				   if ((float)$hourSums[$i] > $temperatureMax) {
+					$temperatureMax = (float)$hourSums[$i];
+				   }
+
+				   //update min
+				   if ((float)$hourSums[$i] < $temperatureMin) {
+					$temperatureMin = (float)$hourSums[$i];
+				   }
+				   //add to dayrray or nightrray
+				   if ($i < 12) {
+					   $temperatureDataDay = $temperatureDataDay . (float)$hourSums[$i] . ",";
+				   } else {
+					   $temperatureDataNight = $temperatureDataNight . (float)$hourSums[$i] . ",";
+				   }
+				   echo "<script>";
+				   echo "var temperatureDataDay = " . $temperatureDataDay . ";";
+				   echo "var temperatureDataNight = " . $temperatureDataNight . ";";
+				   echo "var temperatureMin = " . $temperatureMin . ";";
+				   echo "var temperatureMax = " . $temperatureMax . ";";
 				   echo "</script>";
 			   }
 		?>

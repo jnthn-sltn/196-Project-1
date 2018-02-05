@@ -19,7 +19,7 @@
         foreach ($soundCursor as $doc) {
             $time = split('[ ]', $doc['time']);//split the date into day and time
             $soundX = $soundX . "'" . $time[1] . "',";//put time into the x axis
-            $soundData = $soundData . $doc['val']. ",";//add y value - sound for that time
+            $soundData = $soundData . $doc['audio']. ",";//add y value - sound for that time
         }
         //strip the trailing commas and add the closing bracket
         $soundX = trim($soundX,",");
